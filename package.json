@@ -4,7 +4,11 @@
   "description": "> **Intelligent Transportation System Survey Application**\r > Ứng dụng web hiện đại hỗ trợ khảo sát và thu thập dữ liệu về hạ tầng giao thông thông minh, sử dụng GPS, bản đồ tương tác và hệ thống API Backend bảo mật.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node BE/server.js",
+    "dev": "node --watch BE/server.js",
+    "setup": "npm install && npm install --prefix BE",
+    "test": "node --test tests/api.test.cjs",
+    "test:e2e": "codeceptjs run --steps"
   },
   "repository": {
     "type": "git",

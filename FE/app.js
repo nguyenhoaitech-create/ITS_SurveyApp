@@ -242,6 +242,18 @@ function initMap() {
     { maxZoom: 17 },
   );
 
+  // Switch once if the default provider is unreachable.
+  osmLayer.once("tileerror", () => {
+    if (!map.hasLayer(osmLayer)) return;
+    map.removeLayer(osmLayer);
+    esriStreet.addTo(map);
+    if (miniMap) miniMap.changeLayer(L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", { maxZoom: 19, attribution: "Tiles &copy; Esri" }));
+    showToast("Không tải được OpenStreetMap, đã chuyển sang Esri Street", "warning");
+  });
+  esriStreet.once("tileerror", () => {
+    showToast("Không tải được nền bản đồ. Vui lòng kiểm tra kết nối mạng.", "warning");
+  });
+
   const baseMaps = {
     "🗺️ OpenStreetMap": osmLayer,
     "🎨 Esri Street": esriStreet,
@@ -830,10 +842,10 @@ function addSurveyMarker(point) {
   const popupContent = `
         <!-- Thêm data-testid động vào đây để Test Automation nhận diện (Fix ISS-FE-23) -->
         <div style="min-width: 220px;" data-testid="marker-popup-${point.id}">
-            
+
             <!-- Đã bọc escapeHTML cho Tên điểm (Fix ISS-FE-02) -->
-            <h3 style="margin: 0 0 8px 0; color: ${config.color};"><i class="fas ${config.icon}"></i> ${escapeHTML(point.name)}</h3>
-            
+            <h3 style="margin: 0 0 8px 0; color: ${config.color};"><i class="fas ${config.icon}"></i> ${escapeHtml(point.name)}</h3>
+
             <div style="margin-bottom: 8px;">
                 <span style="display: inline-block; padding: 2px 8px; background: ${config.color}; color: white; border-radius: 4px; font-size: 11px;">${config.label}</span>
                 <span style="display: inline-block; padding: 2px 8px; background: ${flowConfig.color}; color: ${point.trafficFlow === "medium" ? "#333" : "white"}; border-radius: 4px; font-size: 11px; margin-left: 4px;">Mật độ: ${flowConfig.label}</span>

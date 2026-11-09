@@ -5,8 +5,9 @@ export const config = {
   helpers: {
     Playwright: {
       browser: "chromium",
-      url: "http://localhost:5500",
-      show: true,
+      url: process.env.TEST_BASE_URL || "http://localhost:8080",
+      show: false,
+      channel: process.env.PLAYWRIGHT_CHANNEL || undefined,
     },
   },
   include: {
