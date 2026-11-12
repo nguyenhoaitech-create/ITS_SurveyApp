@@ -1,40 +1,43 @@
+
 name: Analyze and Build Docker Image
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "hnguyen"]
   pull_request:
     branches: ["main"]
 
 jobs:
-  qodana:
+  e2e-test:
+    name: E2E Testing
     runs-on: ubuntu-latest
+
     permissions:
-      contents: write
-      pull-requests: write
-      checks: write
+      contents: read
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
       - name: Install Dependencies
-      run: npm ci
+        run: npm ci
 
       - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+        run: npx playwright install --with-deps
 
-    # Bước chạy CodeceptJS E2E Automation Testing
       - name: Run CodeceptJS E2E Tests
-      run: npx codeceptjs run --steps
-        with:
-          name: qodana-report
-          path: ${{ runner.temp }}/qodana/results
-          retention-days: 7
+        run: npx codeceptjs run --steps
 
   build-and-push:
-    needs: qodana
+    name: Build and Push Docker Image
+    needs: e2e-test
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
 

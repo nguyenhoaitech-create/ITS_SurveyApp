@@ -4,6 +4,10 @@ Scenario(
   "TC-SUR-01: Thêm điểm khảo sát thành công khi đã có vị trí",
   ({ I }) => {
     // 1. Chỉ cần gọi 1 dòng này, bot sẽ tự động mở trang và đăng nhập!
+    I.usePlaywrightTo("Set a deterministic GPS position", async ({ page }) => {
+      await page.context().grantPermissions(["geolocation"]);
+      await page.context().setGeolocation({ latitude: 10.8016, longitude: 106.7112 });
+    });
     I.login();
 
     // 2. Click lấy vị trí GPS
