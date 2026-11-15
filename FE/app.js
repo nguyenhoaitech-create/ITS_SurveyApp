@@ -7,7 +7,7 @@ let map;
 let currentLocationMarker;
 let currentLocationCircle;
 let surveyMarkers = [];
-let surveyPoints = [];
+var surveyPoints = [];
 let currentPosition = null;
 let watchId = null;
 
@@ -17,7 +17,7 @@ let trackingPoints = [];
 let trackingStartTime = null;
 let trackingTimer = null;
 let maxSpeed = 0;
-let tripHistory = [];
+var tripHistory = [];
 
 let isMeasuring = false;
 let measurePoints = [];
@@ -1333,41 +1333,44 @@ function exportJSON() {
 }
 
 function exportCSV() {
-  if (surveyPoints.length === 0)
-    return showToast("Không có dữ liệu để xuất!", "warning");
-  const headers = [
-    "ID",
-    "Tên",
-    "Loại",
-    "Mật độ giao thông",
-    "Tình trạng đường",
-    "Số làn",
-    "Vĩ độ",
-    "Kinh độ",
-    "Mô tả",
-    "Thời gian",
-  ];
-  const rows = surveyPoints.map((p) => [
-    p.id,
-    `"${p.name}"`,
-    categoryConfig[p.category]?.label || p.category,
-    trafficFlowConfig[p.trafficFlow]?.label || p.trafficFlow,
-    p.roadCondition,
-    p.laneCount,
-    p.lat,
-    p.lng,
-    `"${p.description || ""}"`,
-    p.timestamp,
-  ]);
-  const csv =
-    "\ufeff" + [headers.join(","), ...rows.map((r) => r.join(","))].join("\n");
-  downloadFile(
-    csv,
-    `its-survey-${getDateString()}.csv`,
-    "text/csv;charset=utf-8",
-  );
-  showToast("Đã xuất file CSV", "success");
-}
+    if (surveyPoints.length === 0)
+      return showToast("Không có dữ liệu để xuất!", "warning");
+    
+    const escapeCSV = (str) => `"${String(str || '').replace(/"/g, '""')}"`;
+
+    const headers = [
+      "ID",
+      "Tên",
+      "Loại",
+      "Mật độ giao thông",
+      "Tình trạng đường",
+      "Số làn",
+      "Vĩ độ",
+      "Kinh độ",
+      "Mô tả",
+      "Thời gian",
+    ];
+    const rows = surveyPoints.map((p) => [
+      p.id,
+      escapeCSV(p.name),
+      categoryConfig[p.category]?.label || p.category,
+      trafficFlowConfig[p.trafficFlow]?.label || p.trafficFlow,
+      p.roadCondition,
+      p.laneCount,
+      p.lat,
+      p.lng,
+      escapeCSV(p.description),
+      p.timestamp,
+    ]);
+    const csv =
+      "\ufeff" + [headers.join(","), ...rows.map((r) => r.join(","))].join("\n");
+    downloadFile(
+      csv,
+      `its-survey-${getDateString()}.csv`,
+      "text/csv;charset=utf-8",
+    );
+    showToast("Đã xuất file CSV", "success");
+  }
 
 function exportGeoJSON() {
   if (surveyPoints.length === 0)
@@ -1401,12 +1404,21 @@ function exportGeoJSON() {
 function exportKML() {
   if (surveyPoints.length === 0)
     return showToast("Không có dữ liệu để xuất!", "warning");
+
+  // Hàm helper escape chuỗi CDATA theo chuẩn XML
+  const escapeCDATA = (str) => String(str || '').replace(/\]\]>/g, ']]]]><![CDATA[>');
+
   let kml = `<?xml version="1.0" encoding="UTF-8"?>\n<kml xmlns="http://www.opengis.net/kml/2.2">\n<Document>\n<name>ITS Survey Data</name>\n<description>Dữ liệu khảo sát giao thông thông minh - ${new Date().toLocaleString("vi-VN")}</description>\n`;
+  
   surveyPoints.forEach((p) => {
     const config = categoryConfig[p.category] || categoryConfig["other"];
-    kml += `<Placemark><name>${p.name}</name><description><![CDATA[<b>Loại:</b> ${config.label}<br><b>Mật độ:</b> ${trafficFlowConfig[p.trafficFlow]?.label}<br><b>Số làn:</b> ${p.laneCount}<br><b>Mô tả:</b> ${p.description || "Không có"}<br><b>Thời gian:</b> ${new Date(p.timestamp).toLocaleString("vi-VN")}]]></description><Point><coordinates>${p.lng},${p.lat},0</coordinates></Point></Placemark>`;
+    const safeDesc = escapeCDATA(p.description || "Không có");
+    
+    kml += `<Placemark><name>${p.name}</name><description><![CDATA[<b>Loại:</b> ${config.label}<br><b>Mật độ:</b> ${trafficFlowConfig[p.trafficFlow]?.label}<br><b>Số làn:</b> ${p.laneCount}<br><b>Mô tả:</b> ${safeDesc}<br><b>Thời gian:</b> ${new Date(p.timestamp).toLocaleString("vi-VN")}]]></description><Point><coordinates>${p.lng},${p.lat},0</coordinates></Point></Placemark>`;
   });
+
   kml += `\n</Document>\n</kml>`;
+  
   downloadFile(
     kml,
     `its-survey-${getDateString()}.kml`,
