@@ -7,34 +7,52 @@ on:
     branches: ["main"]
 
 jobs:
-  qodana:
+  e2e-test:
+    name: E2E Testing
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
-      checks: write
+      contents: read
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Install Dependencies
-      run: npm ci
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install root dependencies
+        run: npm ci
+
+      - name: Install backend dependencies
+        run: npm install --prefix BE
 
       - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+        run: npx playwright install --with-deps
 
-    # Bước chạy CodeceptJS E2E Automation Testing
+      - name: Start app and wait until ready
+        run: |
+          PORT=8080 node BE/server.js > /tmp/its-server.log 2>&1 &
+          for i in {1..60}; do
+            if curl -sf http://localhost:8080 >/dev/null; then
+              echo "App is ready"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "App did not start in time"
+          cat /tmp/its-server.log
+          exit 1
+
       - name: Run CodeceptJS E2E Tests
-      run: npx codeceptjs run --steps
-        with:
-          name: qodana-report
-          path: ${{ runner.temp }}/qodana/results
-          retention-days: 7
+        env:
+          TEST_BASE_URL: http://localhost:8080
+        run: npx codeceptjs run --steps
 
   build-and-push:
-    needs: qodana
+    name: Build and Push Docker Image
+    needs: e2e-test
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
 
