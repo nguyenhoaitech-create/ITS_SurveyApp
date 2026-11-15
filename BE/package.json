@@ -4,6 +4,7 @@
   "main": "server.js",
   "dependencies": {
     "cors": "^2.8.6",
+    "da_its": "file:..",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3"
   },
