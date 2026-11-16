@@ -24,6 +24,8 @@
   "homepage": "https://github.com/nguyenhoaitech-create/KCPM_Ca4#readme",
   "devDependencies": {
     "codeceptjs": "^4.2.0",
-    "playwright": "^1.64.0"
+    "jest": "^30.5.2",
+    "playwright": "^1.64.0",
+    "supertest": "^7.3.2"
   }
 }
