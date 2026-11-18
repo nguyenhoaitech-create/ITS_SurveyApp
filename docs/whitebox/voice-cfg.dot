@@ -1,0 +1,14 @@
+digraph CFG {
+ graph [rankdir=TB,bgcolor=white]; node [shape=box,fontname="DejaVu Sans",fontsize=11]; edge [fontname="DejaVu Sans",fontsize=10];
+ n1 [label="1 Entry"];
+ n2 [label="2 webkit absent?"];
+ n3 [label="3 standard absent?"];
+ n4 [label="4 Warning and return"];
+ n5 [label="5 window.SpeechRecognition truthy?"];
+ n6 [label="6 Choose standard"];
+ n7 [label="7 Choose webkit"];
+ n8 [label="8 Create and configure\nregister callbacks then start"];
+ n9 [label="9 Exit"];
+ n1->n2; n2->n3[label="T"];n2->n5[label="F"];n3->n4[label="T"];n3->n5[label="F"];
+ n4->n9;n5->n6[label="T"];n5->n7[label="F"];n6->n8;n7->n8;n8->n9;
+}
