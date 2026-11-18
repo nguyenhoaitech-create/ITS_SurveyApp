@@ -1,0 +1,347 @@
+[
+  {
+    "id": "GIS-002",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-01 | SCRUM-77",
+      "Ưu tiên / Hình thức": "Medium / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / ST",
+      "Điều kiện và nhãn": "C-GIS-01 Đo khoảng cách và chế độ đo. Nhãn: V1. Nhãn mới: V1",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nKhông có điểm đo",
+      "Các bước": "1. Bấm nút thước đo.\n2. Quan sát panel, trạng thái active và số đo ban đầu.",
+      "Mong đợi": "Panel hiện, active và Khoảng cách: 0 m",
+      "Thực tế": "{\"panel\":true,\"active\":true,\"text\":\"Khoảng cách: 0 m\"}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-003",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-01 | SCRUM-77",
+      "Ưu tiên / Hình thức": "Medium / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / EP",
+      "Điều kiện và nhãn": "C-GIS-01 Đo khoảng cách và chế độ đo. Nhãn: V2. Nhãn mới: V2",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nA=(0,0)",
+      "Các bước": "1. Bật thước đo.\n2. Phát click Leaflet tại A=(0,0).\n3. Đếm marker và đọc khoảng cách.",
+      "Mong đợi": "1 marker, khoảng cách 0 m",
+      "Thực tế": "{\"count\":1,\"text\":\"Khoảng cách: 0 m\"}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-004",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-01 | SCRUM-77",
+      "Ưu tiên / Hình thức": "High / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / EP",
+      "Điều kiện và nhãn": "C-GIS-01 Đo khoảng cách và chế độ đo. Nhãn: V3, V5. Nhãn mới: V3, V5",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nA=(0,0), B=(0,0.005); R=6371 km",
+      "Các bước": "1. Bật thước đo.\n2. Phát click tại A=(0,0), rồi B=(0,0.005).\n3. Đọc khoảng cách, số marker và kiểu đường nối.",
+      "Mong đợi": "Khoảng cách: 556 m",
+      "Thực tế": "{\"text\":\"Khoảng cách: 556 m\",\"markers\":2,\"dash\":\"10, 10\"}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-005",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-01 | SCRUM-77",
+      "Ưu tiên / Hình thức": "High / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / EP",
+      "Điều kiện và nhãn": "C-GIS-01 Đo khoảng cách và chế độ đo. Nhãn: V3, V6. Nhãn mới: V6",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nA=(0,0), B=(0,0.02); R=6371 km",
+      "Các bước": "1. Bật thước đo.\n2. Phát click tại A=(0,0), rồi B=(0,0.02).\n3. Đọc đơn vị km, số marker và kiểu đường nối.",
+      "Mong đợi": "Khoảng cách: 2.22 km",
+      "Thực tế": "{\"text\":\"Khoảng cách: 2.22 km\",\"markers\":2,\"dash\":\"10, 10\"}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-006",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-01 | SCRUM-77",
+      "Ưu tiên / Hình thức": "High / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / EP",
+      "Điều kiện và nhãn": "C-GIS-01 Đo khoảng cách và chế độ đo. Nhãn: V3. Nhãn mới: không mới",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nA=(0,0), B=(0,0.005), C=(0.005,0.005); tổng 1111.949 m",
+      "Các bước": "1. Bật thước đo.\n2. Phát click theo thứ tự A=(0,0), B=(0,0.005), C=(0.005,0.005).\n3. Đọc tổng chiều dài và đếm marker.",
+      "Mong đợi": "Khoảng cách: 1.11 km và 3 marker",
+      "Thực tế": "{\"text\":\"Khoảng cách: 1.11 km\",\"count\":3}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-007",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-01 | SCRUM-77",
+      "Ưu tiên / Hình thức": "Medium / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / ST",
+      "Điều kiện và nhãn": "C-GIS-01 Đo khoảng cách và chế độ đo. Nhãn: V4. Nhãn mới: V4",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nĐã đo hai điểm",
+      "Các bước": "1. Bật thước và chọn hai điểm đo.\n2. Bấm lại nút thước.\n3. Kiểm panel ẩn, marker/đường đã gỡ và số đo đã đặt lại.",
+      "Mong đợi": "Panel ẩn, 0 marker, đường null, 0 m",
+      "Thực tế": "{\"hidden\":true,\"count\":0,\"line\":null,\"text\":\"Khoảng cách: 0 m\"}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-008",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-01 | SCRUM-77",
+      "Ưu tiên / Hình thức": "Medium / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / ST",
+      "Điều kiện và nhãn": "C-GIS-01 Đo khoảng cách và chế độ đo. Nhãn: V4. Nhãn mới: không mới",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nĐã đo hai điểm",
+      "Các bước": "1. Bật thước và chọn hai điểm đo.\n2. Bấm nút đóng panel.\n3. Kiểm trạng thái đo, marker/đường và số đo đặt lại.",
+      "Mong đợi": "Panel ẩn, 0 marker, đường null, 0 m",
+      "Thực tế": "{\"hidden\":true,\"count\":0,\"line\":null,\"text\":\"Khoảng cách: 0 m\"}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-009",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-02 | SCRUM-77",
+      "Ưu tiên / Hình thức": "Medium / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Negative thiếu GPS / DT và EP",
+      "Điều kiện và nhãn": "C-GIS-02 Vẽ tuyến theo điều kiện sẵn sàng. Nhãn: X2. Nhãn mới: X2",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nĐặt currentPosition=null sau khởi tạo",
+      "Các bước": "1. Đặt currentPosition=null sau khi trang khởi tạo.\n2. Bấm Vẽ tuyến.\n3. Đọc toast và kiểm routingControl không được tạo.",
+      "Mong đợi": "Cảnh báo Vui lòng lấy vị trí trước và không tạo control",
+      "Thực tế": "{\"messages\":[\" ITS Survey sẵn sàng! Nhấn D để đổi theme\",\"Vui lòng lấy vị trí trước!\"],\"control\":false}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-010",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-02 | SCRUM-77",
+      "Ưu tiên / Hình thức": "Medium / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive kiểm cấu hình / DT",
+      "Điều kiện và nhãn": "C-GIS-02 Vẽ tuyến theo điều kiện sẵn sàng. Nhãn: V7. Nhãn mới: V7",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nGPS 10.8016,106.7112",
+      "Các bước": "1. Xác nhận GPS giả lập 10.8016,106.7112.\n2. Bấm Vẽ tuyến.\n3. Đọc waypoint xuất phát, routeWhileDragging và showAlternatives.",
+      "Mong đợi": "Một điểm xuất phát đúng GPS; routeWhileDragging và showAlternatives bật",
+      "Thực tế": "{\"waypoints\":[[10.8016,106.7112]],\"drag\":true,\"alternatives\":true}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-011",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-02 | SCRUM-77",
+      "Ưu tiên / Hình thức": "High / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive luồng thêm đích / ST",
+      "Điều kiện và nhãn": "C-GIS-02 Vẽ tuyến theo điều kiện sẵn sàng. Nhãn: V8. Nhãn mới: V8",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nGPS 10.8016,106.7112; đích 10.82,106.73",
+      "Các bước": "1. Bật Vẽ tuyến khi GPS ở 10.8016,106.7112.\n2. Phát click Leaflet tại đích 10.82,106.73.\n3. Đếm waypoint và đối chiếu vị trí xuất phát/đích.",
+      "Mong đợi": "Có 2 waypoint gồm điểm xuất phát và điểm đến",
+      "Thực tế": "{\"waypoints\":[[10.8016,106.7112]]}",
+      "Trạng thái / Bug": "Fail | Hồ sơ lỗi ở mục8; chưa tạo Bug Jira.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-012",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-02 | SCRUM-77",
+      "Ưu tiên / Hình thức": "Medium / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive callback giả lập / EP",
+      "Điều kiện và nhãn": "C-GIS-02 Vẽ tuyến theo điều kiện sẵn sàng. Nhãn: V9. Nhãn mới: V9",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nroutesfound giả lập distance=2500 m; time=360 s",
+      "Các bước": "1. Bật Vẽ tuyến.\n2. Phát routesfound giả lập totalDistance=2500 m, totalTime=360 giây.\n3. Kiểm toast số km và phút; không coi đây là kết quả dịch vụ OSRM thật.",
+      "Mong đợi": "Toast 2.50 km và 6 phút; chỉ xác nhận callback, không xác nhận OSRM thật",
+      "Thực tế": "{\"messages\":[\" ITS Survey sẵn sàng! Nhấn D để đổi theme\",\"Click trên bản đồ để thêm điểm đến\",\" 2.50 km -  6 phút\"]}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-013",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-02 | SCRUM-77",
+      "Ưu tiên / Hình thức": "Medium / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / ST",
+      "Điều kiện và nhãn": "C-GIS-02 Vẽ tuyến theo điều kiện sẵn sàng. Nhãn: V10. Nhãn mới: V10",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nTuyến đã bật",
+      "Các bước": "1. Bấm Vẽ tuyến để bật.\n2. Bấm Vẽ tuyến lần hai.\n3. Kiểm control bị gỡ và toast tắt tuyến.",
+      "Mong đợi": "routingControl=null và toast Đã tắt vẽ tuyến đường",
+      "Thực tế": "{\"control\":false,\"messages\":[\" ITS Survey sẵn sàng! Nhấn D để đổi theme\",\"Click trên bản đồ để thêm điểm đến\",\"Đã tắt vẽ tuyến đường\"]}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-014",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-02 | SCRUM-77",
+      "Ưu tiên / Hình thức": "Medium / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Negative thiếu thư viện / DT và đoán lỗi",
+      "Điều kiện và nhãn": "C-GIS-02 Vẽ tuyến theo điều kiện sẵn sàng. Nhãn: X3. Nhãn mới: X3",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nFault injection L.Routing.control=undefined",
+      "Các bước": "1. Giả lập L.Routing.control=undefined.\n2. Bấm Vẽ tuyến.\n3. Kiểm thông báo thư viện chưa sẵn sàng.",
+      "Mong đợi": "Cảnh báo Tính năng vẽ tuyến đường chưa sẵn sàng",
+      "Thực tế": "{\"messages\":[\" ITS Survey sẵn sàng! Nhấn D để đổi theme\",\"Tính năng vẽ tuyến đường chưa sẵn sàng\"]}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-015",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-03 | SCRUM-77",
+      "Ưu tiên / Hình thức": "Medium / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Negative dữ liệu rỗng / DT và EP",
+      "Điều kiện và nhãn": "C-GIS-03 Bật tắt và cập nhật heatmap. Nhãn: X4. Nhãn mới: X4",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nAPI fixture 0 điểm",
+      "Các bước": "1. Giữ API fixture trả data=[].\n2. Bấm Heatmap.\n3. Kiểm thông báo rỗng, trạng thái tắt và không tạo lớp.",
+      "Mong đợi": "Cảnh báo không có dữ liệu; trạng thái tắt và lớp null",
+      "Thực tế": "{\"active\":false,\"layer\":false,\"messages\":[\" ITS Survey sẵn sàng! Nhấn D để đổi theme\",\"Chưa có dữ liệu để hiển thị heatmap\"]}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-016",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-03 | SCRUM-77",
+      "Ưu tiên / Hình thức": "High / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / EP",
+      "Điều kiện và nhãn": "C-GIS-03 Bật tắt và cập nhật heatmap. Nhãn: V11, V12a, V12b, V12c, V12d. Nhãn mới: V11, V12a, V12b, V12c, V12d",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 4 điểm; GPS giả lập; không dùng đăng nhập thật.\n4 điểm low, medium, high, congested",
+      "Các bước": "1. Nạp bốn điểm với trafficFlow low,medium,high,congested.\n2. Bật heatmap.\n3. Đối chiếu bốn trọng số và gradient của lớp.",
+      "Mong đợi": "Trọng số 0.3 0.5 0.7 1.0 và xanh vàng cam đỏ",
+      "Thực tế": "{\"weights\":[0.3,0.5,0.7,1],\"gradient\":{\"1\":\"#dc2626\",\"0.2\":\"#22c55e\",\"0.4\":\"#eab308\",\"0.6\":\"#f97316\",\"0.8\":\"#ef4444\"}}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-017",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-03 | SCRUM-77",
+      "Ưu tiên / Hình thức": "Medium / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / ST",
+      "Điều kiện và nhãn": "C-GIS-03 Bật tắt và cập nhật heatmap. Nhãn: V13. Nhãn mới: V13",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 1 điểm; GPS giả lập; không dùng đăng nhập thật.\nCó 1 điểm",
+      "Các bước": "1. Nạp một điểm và bật heatmap.\n2. Bấm Heatmap lần hai.\n3. Kiểm lớp bị gỡ và trạng thái tắt.",
+      "Mong đợi": "Lớp bị gỡ, trạng thái tắt",
+      "Thực tế": "{\"active\":false,\"layer\":false}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-018",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-03 | SCRUM-77",
+      "Ưu tiên / Hình thức": "High / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / ST",
+      "Điều kiện và nhãn": "C-GIS-03 Bật tắt và cập nhật heatmap. Nhãn: V14. Nhãn mới: V14",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 1 điểm; GPS giả lập; không dùng đăng nhập thật.\n1 điểm có sẵn; POST fixture id=999",
+      "Các bước": "1. Nạp một điểm và bật heatmap.\n2. Điền form tên Điểm QA thêm, lưu với POST fixture id=999.\n3. Đối chiếu số bản ghi và số vị trí trong heatmap cùng bằng 2.",
+      "Mong đợi": "2 điểm trong dữ liệu và 2 vị trí trong heatmap",
+      "Thực tế": "{\"data\":2,\"heat\":2}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-019",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-03 | SCRUM-77",
+      "Ưu tiên / Hình thức": "High / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / ST",
+      "Điều kiện và nhãn": "C-GIS-03 Bật tắt và cập nhật heatmap. Nhãn: V15. Nhãn mới: V15",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 1 điểm; GPS giả lập; không dùng đăng nhập thật.\n1 điểm id=1",
+      "Các bước": "1. Nạp điểm id=1 và bật heatmap.\n2. Xóa điểm, chấp nhận hộp xác nhận.\n3. Kiểm dữ liệu và heatmap không còn điểm đó.\nXác nhận hộp SweetAlert bằng nút Đồng ý trước khi đối chiếu sau xóa.",
+      "Mong đợi": "0 điểm dữ liệu và không còn vị trí heatmap",
+      "Thực tế": "{\"data\":0,\"heat\":1}",
+      "Trạng thái / Bug": "Fail | Hồ sơ lỗi ở mục8; chưa tạo Bug Jira.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-020",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-04 | SCRUM-77",
+      "Ưu tiên / Hình thức": "High / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / BVA và EP",
+      "Điều kiện và nhãn": "C-GIS-04 Gom nhóm đúng số lượng. Nhãn: V16, V17, V18, B5, B6, B8, B9. Nhãn mới: V16, V17, V18, B5, B6, B8, B9",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 51 điểm; GPS giả lập; không dùng đăng nhập thật.\n51 điểm sát nhau; ngưỡng 10 11 50 51",
+      "Các bước": "1. Nạp 51 điểm theo dữ liệu dùng chung.\n2. Bật cluster, kiểm số marker trong nhóm.\n3. Kiểm hàm tạo icon với số lượng 10,11,50,51.",
+      "Mong đợi": "51 marker; small ở 10, medium ở 11 và 50, large ở 51",
+      "Thực tế": "{\"count\":51,\"icons\":[\"<div class=\\\"cluster-marker cluster-small\\\"><span>10</span></div>\",\"<div class=\\\"cluster-marker cluster-medium\\\"><span>11</span></div>\",\"<div class=\\\"cluster-marker cluster-medium\\\"><span>50</span></div>\",\"<div class=\\\"cluster-marker cluster-large\\\"><span>51</span></div>\"]}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-021",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-04 | SCRUM-77",
+      "Ưu tiên / Hình thức": "Medium / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / ST",
+      "Điều kiện và nhãn": "C-GIS-04 Gom nhóm đúng số lượng. Nhãn: V19. Nhãn mới: V19",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 3 điểm; GPS giả lập; không dùng đăng nhập thật.\n3 điểm",
+      "Các bước": "1. Nạp 3 điểm.\n2. Bật rồi tắt cluster.\n3. Đếm marker trên map và kiểm cluster không còn trên map; số lớp nội bộ chỉ ghi chẩn đoán.",
+      "Mong đợi": "3 marker trở về bản đồ và cluster không còn trên map; số lớp nội bộ là thông tin chẩn đoán",
+      "Thực tế": "{\"onMap\":3,\"inCluster\":3,\"clusterOnMap\":false,\"oracleNote\":\"SRS chỉ yêu cầu marker trở về map; không bắt buộc nhóm nội bộ rỗng. Oracle cũ quá chặt đã được ghi nhận riêng.\"}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-022",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-04 | SCRUM-77",
+      "Ưu tiên / Hình thức": "High / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive / ST",
+      "Điều kiện và nhãn": "C-GIS-04 Gom nhóm đúng số lượng. Nhãn: V20. Nhãn mới: V20",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 1 điểm; GPS giả lập; không dùng đăng nhập thật.\n1 điểm; thêm qua form; xóa id=1",
+      "Các bước": "1. Nạp một điểm id=1 và bật cluster.\n2. Thêm điểm bằng form; kiểm cụm có 2 marker.\n3. Xóa id=1; kiểm cụm còn 1 marker và không còn điểm đã xóa.\nXác nhận hộp SweetAlert bằng nút Đồng ý trước khi đối chiếu sau xóa.",
+      "Mong đợi": "Sau thêm 2 marker trong cụm; sau xóa còn 1 và không còn id=1",
+      "Thực tế": "{\"before\":{\"data\":2,\"cluster\":1},\"after\":{\"data\":1,\"cluster\":1,\"oldPresent\":true}}",
+      "Trạng thái / Bug": "Fail | Hồ sơ lỗi ở mục8; chưa tạo Bug Jira.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-023",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-05 | SCRUM-77",
+      "Ưu tiên / Hình thức": "Medium / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Negative thiếu GPS / DT và EP",
+      "Điều kiện và nhãn": "C-GIS-05 Hiển thị và xử lý lỗi thời tiết. Nhãn: X7. Nhãn mới: X7",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\ncurrentPosition=null",
+      "Các bước": "1. Đặt currentPosition=null.\n2. Bấm Thời tiết.\n3. Kiểm cảnh báo cần lấy vị trí.",
+      "Mong đợi": "Toast Vui lòng lấy vị trí trước",
+      "Thực tế": "{\"messages\":[\" ITS Survey sẵn sàng! Nhấn D để đổi theme\",\"Vui lòng lấy vị trí trước!\"]}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  },
+  {
+    "id": "GIS-024",
+    "rows": {
+      "Module / Yêu cầu": "GIS / FR-GIS-05 | SCRUM-77",
+      "Ưu tiên / Hình thức": "Medium / Playwright, FE cô lập",
+      "Loại / Kỹ thuật": "Positive và Negative trong một chuỗi / EP và đoán lỗi",
+      "Điều kiện và nhãn": "C-GIS-05 Hiển thị và xử lý lỗi thời tiết. Nhãn: V21, V22, X8. Nhãn mới: V21, V22, X8",
+      "Tiền điều kiện / Dữ liệu": "Context mới; API fixture 0 điểm; GPS giả lập; không dùng đăng nhập thật.\nMock Open-Meteo 28.6°C mã 0; sau đó lỗi mạng",
+      "Các bước": "1. Giả lập Open-Meteo trả 28.6°C, weathercode=0.\n2. Bấm Thời tiết; kiểm 29°C, Trời quang và query tọa độ/múi giờ.\n3. Đóng widget, kiểm trạng thái ẩn.\n4. Giả lập lỗi mạng rồi bấm Thời tiết lại.\n5. Kiểm cảnh báo lỗi và widget ẩn.",
+      "Mong đợi": "Đúng nhiệt độ, mô tả, query; đóng ẩn; lỗi cảnh báo và ẩn widget",
+      "Thực tế": "{\"before\":{\"temp\":\"29°C\",\"desc\":\"Trời quang\",\"url\":\"https://api.open-meteo.com/v1/forecast?latitude=10.8016&longitude=106.7112&current_weather=true&timezone=Asia/Ho_Chi_Minh\"},\"closed\":true,\"hidden\":true,\"messages\":[\" ITS Survey sẵn sàng! Nhấn D để đổi theme\",\"Thời tiết: 29°C - Trời quang\",\"Không thể lấy thông tin thời tiết\"]}",
+      "Trạng thái / Bug": "Pass | Đạt trong phạm vi fixture và assertion đã ghi.",
+      "Hỗ trợ Postman": "Không; kiểm lớp Leaflet, UI và trạng thái bằng Playwright."
+    }
+  }
+]
