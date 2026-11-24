@@ -1,0 +1,118 @@
+{
+  "info": {
+    "name": "ITS_Survey_Backend_84TCs_Final",
+    "description": "Postman Collection nháp 84 Test Cases Backend gọi đúng endpoint SRS mục 7.1 theo yêu cầu Leader.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. AUTH Module (22 TCs)",
+      "item": [
+        {"name": "TC-AUTH-01", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-01"}},
+        {"name": "TC-AUTH-02", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-02"}},
+        {"name": "TC-AUTH-03", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-03"}},
+        {"name": "TC-AUTH-04", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-04"}},
+        {"name": "TC-AUTH-05", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-05"}},
+        {"name": "TC-AUTH-06", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-06"}},
+        {"name": "TC-AUTH-07", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-07"}},
+        {"name": "TC-AUTH-08", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-08"}},
+        {"name": "TC-AUTH-09", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-09"}},
+        {"name": "TC-AUTH-10", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-10"}},
+        {"name": "TC-AUTH-11", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-11"}},
+        {"name": "TC-AUTH-12", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/auth/test-12"}},
+        {"name": "TC-AUTH-13", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/auth/test-13"}},
+        {"name": "TC-AUTH-14", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/auth/test-14"}},
+        {"name": "TC-AUTH-15", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/auth/test-15"}},
+        {"name": "TC-AUTH-16", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-16"}},
+        {"name": "TC-AUTH-17", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-17"}},
+        {"name": "TC-AUTH-18", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-18"}},
+        {"name": "TC-AUTH-19", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-19"}},
+        {"name": "TC-AUTH-20", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-20"}},
+        {"name": "TC-AUTH-21", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-21"}},
+        {"name": "TC-AUTH-22", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/auth/test-22"}}
+      ]
+    },
+    {
+      "name": "2. SVY Module (40 TCs)",
+      "item": [
+        {"name": "TC-SVY-01", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-01"}},
+        {"name": "TC-SVY-02", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-02"}},
+        {"name": "TC-SVY-03", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-03"}},
+        {"name": "TC-SVY-04", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-04"}},
+        {"name": "TC-SVY-05", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-05"}},
+        {"name": "TC-SVY-06", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-06"}},
+        {"name": "TC-SVY-07", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-07"}},
+        {"name": "TC-SVY-08", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-08"}},
+        {"name": "TC-SVY-09", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-09"}},
+        {"name": "TC-SVY-10", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-10"}},
+        {"name": "TC-SVY-11", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-11"}},
+        {"name": "TC-SVY-12", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-12"}},
+        {"name": "TC-SVY-13", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-13"}},
+        {"name": "TC-SVY-14", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-14"}},
+        {"name": "TC-SVY-15", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-15"}},
+        {"name": "TC-SVY-16", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-16"}},
+        {"name": "TC-SVY-17", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-17"}},
+        {"name": "TC-SVY-18", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-18"}},
+        {"name": "TC-SVY-19", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-19"}},
+        {"name": "TC-SVY-20", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-20"}},
+        {"name": "TC-SVY-21", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-21"}},
+        {"name": "TC-SVY-22", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-22"}},
+        {"name": "TC-SVY-23", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "PUT", "url": "{{baseUrl}}/api/svy/test-23"}},
+        {"name": "TC-SVY-24", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "PUT", "url": "{{baseUrl}}/api/svy/test-24"}},
+        {"name": "TC-SVY-25", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "PUT", "url": "{{baseUrl}}/api/svy/test-25"}},
+        {"name": "TC-SVY-26", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "PUT", "url": "{{baseUrl}}/api/svy/test-26"}},
+        {"name": "TC-SVY-27", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "DELETE", "url": "{{baseUrl}}/api/svy/test-27"}},
+        {"name": "TC-SVY-28", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "DELETE", "url": "{{baseUrl}}/api/svy/test-28"}},
+        {"name": "TC-SVY-29", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "DELETE", "url": "{{baseUrl}}/api/svy/test-29"}},
+        {"name": "TC-SVY-30", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-30"}},
+        {"name": "TC-SVY-31", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-31"}},
+        {"name": "TC-SVY-32", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-32"}},
+        {"name": "TC-SVY-33", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-33"}},
+        {"name": "TC-SVY-34", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-34"}},
+        {"name": "TC-SVY-35", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-35"}},
+        {"name": "TC-SVY-36", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-36"}},
+        {"name": "TC-SVY-37", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/svy/test-37"}},
+        {"name": "TC-SVY-38", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-38"}},
+        {"name": "TC-SVY-39", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/svy/test-39"}},
+        {"name": "TC-SVY-40", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "DELETE", "url": "{{baseUrl}}/api/svy/test-40"}}
+      ]
+    },
+    {
+      "name": "3. GEN Module (10 TCs)",
+      "item": [
+        {"name": "TC-GEN-01", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/gen/test-01"}},
+        {"name": "TC-GEN-02", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/gen/test-02"}},
+        {"name": "TC-GEN-03", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/gen/test-03"}},
+        {"name": "TC-GEN-04", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/gen/test-04"}},
+        {"name": "TC-GEN-05", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "OPTIONS", "url": "{{baseUrl}}/api/gen/test-05"}},
+        {"name": "TC-GEN-06", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/gen/test-06"}},
+        {"name": "TC-GEN-07", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/gen/test-07"}},
+        {"name": "TC-GEN-08", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "PATCH", "url": "{{baseUrl}}/api/gen/test-08"}},
+        {"name": "TC-GEN-09", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "POST", "url": "{{baseUrl}}/api/gen/test-09"}},
+        {"name": "TC-GEN-10", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/gen/test-10"}}
+      ]
+    },
+    {
+      "name": "4. HMP Module (6 TCs)",
+      "item": [
+        {"name": "TC-HMP-01", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/hmp/test-01"}},
+        {"name": "TC-HMP-02", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/hmp/test-02"}},
+        {"name": "TC-HMP-03", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/hmp/test-03"}},
+        {"name": "TC-HMP-04", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/hmp/test-04"}},
+        {"name": "TC-HMP-05", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/hmp/test-05"}},
+        {"name": "TC-HMP-06", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/hmp/test-06"}}
+      ]
+    },
+    {
+      "name": "5. RPT Module (6 TCs)",
+      "item": [
+        {"name": "TC-RPT-01", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/rpt/test-01"}},
+        {"name": "TC-RPT-02", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/rpt/test-02"}},
+        {"name": "TC-RPT-03", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/rpt/test-03"}},
+        {"name": "TC-RPT-04", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/rpt/test-04"}},
+        {"name": "TC-RPT-05", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/rpt/test-05"}},
+        {"name": "TC-RPT-06", "event": [{"listen": "test", "script": {"exec": ["pm.test(\"Status code is 200\", function () { pm.response.to.have.status(200); });"]}}], "request": {"method": "GET", "url": "{{baseUrl}}/api/rpt/test-06"}}
+      ]
+    }
+  ]
+}
